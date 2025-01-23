@@ -14,5 +14,6 @@
     "terminal.integrated.fontFamily": "Google Sans Code",
     "workbench.iconTheme": "catppuccin-mocha",
     "python.languageServer": "Pylance",
+    
 
 }
