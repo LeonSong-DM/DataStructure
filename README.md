@@ -1,2 +1,36 @@
-# DataStructure
-Record the learning process of data structures and algorithms.
+
+# DataStructure 🚀
+Record the learning process of data structures and algorithms.  
+
+这个仓库主要用来记录我在 **考研阶段** 学习数据结构与算法的过程。
+
+目前 **全部使用 C 语言实现**，一方面是为了贴近考研要求，另一方面也是逼自己真正理解指针、内存和底层逻辑。  
+等 C 写熟之后，会用 **Python 再完整复现一遍**，对比两种语言的实现方式，加深理解。
+
+---
+
+## 我在这里做什么？
+
+- 手写常见数据结构和经典算法  
+- 按考研思路一步一步实现，而不是“调库秒出答案”  
+- 顺便记录一些容易忘、容易错的点，方便反复回顾  
+
+---
+
+## 当前使用语言
+
+- **C**（主力，考研向，偏底层）
+- **Python**（后续加入，用来复现算法思想）
+
+---
+
+## 目录大概长这样（会慢慢补全）
+
+```text
+C/
+├── linear_list/     // 顺序表、链表
+├── stack_queue/     // 栈、队列
+├── tree/            // 二叉树相关
+├── graph/           // 图、遍历
+├── sort/            // 各种排序
+├── search/          // 查找算法
