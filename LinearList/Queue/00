@@ -1,0 +1,6 @@
+理解实现队列时取模运算的含义
+
+index  = x % 5
+不是问你x除以5还剩多少,而是从0开始走x步后位于哪个格子
+入队时: int index = (front + size) % capacity
+
