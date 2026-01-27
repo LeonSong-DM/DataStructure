@@ -1,6 +1,6 @@
 {   
     "editor.cursorSmoothCaretAnimation": "on",
-    "editor.fontSize": 15,
+    "editor.fontSize": 14,
     "workbench.editor.empty.hint": "hidden",
     "terminal.integrated.fontSize": 16,
     "editor.overtypeCursorStyle": "underline",

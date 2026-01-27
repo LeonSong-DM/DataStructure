@@ -45,7 +45,6 @@ bool queueFull(DoubleEndedQueue *queue) {
     if (!queue) return false;
     // return (queue->rear % queue->capacity) + 1 == queue->front;  逻辑不对
     return (queue->rear + 1) % queue->capacity == queue->front;
-
 }
 
 bool getFirst(DoubleEndedQueue *queue, int *res) {
@@ -97,17 +96,60 @@ bool popLast(DoubleEndedQueue *queue, int *res) {
     return true;
 }
 
+
 int main() {
-    printf("Hello World.\n");
+    int x;
+    DoubleEndedQueue *q = initDoubleEndedQueue(5); // 实际最多存 4 个
+
+    // 1. 初始状态
+    assert(queueEmpty(q));
+    assert(!queueFull(q));
+    assert(getSize(q) == 0);
+
+    // 2. 队尾入队
+    assert(push(q, 1));
+    assert(push(q, 2));
+    assert(push(q, 3));
+
+    assert(getSize(q) == 3);
+    assert(getFirst(q, &x) && x == 1);
+    assert(getLast(q, &x) && x == 3);
+
+    // 3. 队头入队
+    assert(pushFirst(q, 0));
+    assert(queueFull(q));
+    assert(getFirst(q, &x) && x == 0);
+    assert(getLast(q, &x) && x == 3);
+
+    // 4. 满队列再入（应失败）
+    assert(!push(q, 100));
+    assert(!pushFirst(q, 100));
+
+    // 5. 队头出队
+    assert(pop(q, &x) && x == 0);
+    assert(pop(q, &x) && x == 1);
+
+    // 6. 队尾出队
+    assert(popLast(q, &x) && x == 3);
+    assert(popLast(q, &x) && x == 2);
+
+    assert(queueEmpty(q));
+    assert(getSize(q) == 0);
+
+    // 7. 环形测试（回绕）
+    assert(push(q, 10));
+    assert(push(q, 20));
+    assert(push(q, 30));
+    assert(pop(q, &x) && x == 10);
+    assert(pop(q, &x) && x == 20);
+    assert(push(q, 40));
+    assert(push(q, 50));
+
+    assert(getFirst(q, &x) && x == 30);
+    assert(getLast(q, &x) && x == 50);
+
+    printf("✅ 所有双端队列测试通过！\n");
+
+    destroyDoubleEndedQueue(q);
     return 0;
 }
-
-/*
-    是否工作日
-    是否节假日
-    时间
-    楼层功能
-    视觉模型 - 人是否在等电梯 ?
-    有人等 - 自动识别 优先调度
-    做功少. 效率高.
-*/

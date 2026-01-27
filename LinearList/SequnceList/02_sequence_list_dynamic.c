@@ -1,6 +1,6 @@
 /** 顺序表的声明 - 动态存储 */
+
 // 创建 初始化 遍历 增删改查
-// Data Science and Big Data Technology
 
 #include<stdio.h>
 #include<stdlib.h>

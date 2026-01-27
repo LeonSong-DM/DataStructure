@@ -1,0 +1,114 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+typedef struct Node {
+    int val;
+    struct Node *next;
+} Node;
+
+/* 单向循环链表：只维护尾指针 */
+typedef struct {
+    Node *tail;   // tail->next 永远指向头结点
+} CSLL;
+
+
+CSLL *csll_init() {
+    CSLL *list = (CSLL *)malloc(sizeof(CSLL));
+    list->tail = NULL;
+    return list;
+}
+
+void csll_destroy(CSLL *list) {
+    if (!list) return;
+    if (list->tail == NULL) {   // 空表
+        free(list);
+        return;
+    }; 
+
+    Node *head = list->tail->next;  // head,首个被销毁
+    Node *current = list->tail->next;
+    Node *next;
+
+    do {
+        next = current->next;
+        free(current);
+        current = next;
+    } while (current != head);
+    
+    list->tail = NULL;
+    free(list);
+}
+
+bool csll_empty(CSLL *list) {
+    return !list || list->tail == NULL;
+}
+
+
+bool csll_push_front(CSLL *list, int val) {
+    if (!list) return false;
+
+    Node *node = (Node *)malloc(sizeof(Node));
+    node->val = val;
+
+    if (list->tail == NULL) {
+        node->next = node;
+        list->tail = node;
+    } else {
+        node->next = list->tail->next;
+        list->tail->next = node;
+    }
+    return true;
+}
+
+
+bool csll_push_back(CSLL *list, int val) {
+    if (!list) return false;
+
+    Node *node = (Node *)malloc(sizeof(Node));
+    node->val = val;
+
+    if (list->tail == NULL) {
+        node->next = node;
+        list->tail = node;
+    } else {
+        node->next = list->tail->next;
+        list->tail->next = node;
+        list->tail = node;
+    }
+    return true;
+}
+
+
+bool csll_pop_front(CSLL *list, int *res) {
+    if (!list || !list->tail) return false;
+
+    Node *head = list->tail->next;
+
+    if (res) *res = head->val;
+
+    if (head == list->tail) {
+        list->tail = NULL;
+    } else {
+        list->tail->next = head->next;
+    }
+
+    free(head);
+    return true;
+}
+
+
+void csll_print(CSLL *list) {
+    if (!list || !list->tail) {
+        printf("CSLL is empty\n");
+        return;
+    }
+
+    Node *cur = list->tail->next; // head
+    do {
+        printf("%d ", cur->val);
+        cur = cur->next;
+    } while (cur != list->tail->next);
+
+    printf("\n");
+}

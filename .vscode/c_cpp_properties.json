@@ -10,7 +10,8 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:\\Users\\beeplux\\scoop\\apps\\gcc\\current\\bin\\gcc.exe"
+            // "compilerPath": "C:\\Users\\beeplux\\scoop\\apps\\gcc\\current\\bin\\gcc.exe"
+            "compilerPath": "/usr/bin/gcc"
         }
     ],
     "version": 4
