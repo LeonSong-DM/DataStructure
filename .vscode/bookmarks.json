@@ -239,6 +239,61 @@
 					"label": "出队"
 				}
 			]
+		},
+		{
+			"path": "Queue/05_double_ended_queue.c",
+			"bookmarks": [
+				{
+					"line": 14,
+					"column": 8,
+					"label": "初始化"
+				},
+				{
+					"line": 25,
+					"column": 0,
+					"label": "析构函数"
+				},
+				{
+					"line": 37,
+					"column": 0,
+					"label": "判空"
+				},
+				{
+					"line": 43,
+					"column": 0,
+					"label": "判满"
+				},
+				{
+					"line": 50,
+					"column": 0,
+					"label": "获取队首元素"
+				},
+				{
+					"line": 57,
+					"column": 0,
+					"label": "获取队尾元素"
+				},
+				{
+					"line": 64,
+					"column": 5,
+					"label": "入队"
+				},
+				{
+					"line": 72,
+					"column": 5,
+					"label": "出队"
+				},
+				{
+					"line": 81,
+					"column": 0,
+					"label": "从队首入队"
+				},
+				{
+					"line": 90,
+					"column": 9,
+					"label": "从队尾出队"
+				}
+			]
 		}
 	]
 }
