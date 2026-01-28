@@ -264,69 +264,34 @@
 					"label": "判满"
 				},
 				{
-					"line": 49,
+					"line": 92,
 					"column": 0,
 					"label": "获取队首元素"
 				},
 				{
-					"line": 56,
+					"line": 99,
 					"column": 0,
 					"label": "获取队尾元素"
 				},
 				{
-					"line": 63,
+					"line": 106,
 					"column": 5,
 					"label": "入队"
 				},
 				{
-					"line": 71,
+					"line": 114,
 					"column": 5,
 					"label": "出队"
 				},
 				{
-					"line": 80,
+					"line": 123,
 					"column": 0,
 					"label": "从队首入队"
 				},
 				{
-					"line": 89,
+					"line": 132,
 					"column": 9,
 					"label": "从队尾出队"
-				}
-			]
-		},
-		{
-			"path": "LinearList/NodeList/02_circular_singly_linked_list.c",
-			"bookmarks": [
-				{
-					"line": 23,
-					"column": 0,
-					"label": "初始化Node"
-				},
-				{
-					"line": 30,
-					"column": 1,
-					"label": "初始化"
-				},
-				{
-					"line": 36,
-					"column": 0,
-					"label": "析构函数"
-				},
-				{
-					"line": 54,
-					"column": 0,
-					"label": "判空"
-				},
-				{
-					"line": 61,
-					"column": 1,
-					"label": ""
-				},
-				{
-					"line": 81,
-					"column": 0,
-					"label": "尾插"
 				}
 			]
 		}
