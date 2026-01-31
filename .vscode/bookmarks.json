@@ -1,242 +1,77 @@
 {
 	"files": [
 		{
-			"path": "LinearList/Stack/01_Sequence_Stack.c",
+			"path": "Queue/06_double_ended_queue.c",
 			"bookmarks": [
 				{
-					"line": 7,
-					"column": 5,
-					"label": "定义栈"
+					"line": 18,
+					"column": 9,
+					"label": "初始化"
 				},
 				{
-					"line": 12,
-					"column": 10,
-					"label": "初始化栈"
-				},
-				{
-					"line": 16,
-					"column": 10,
-					"label": "判断栈空"
-				},
-				{
-					"line": 26,
-					"column": 3,
-					"label": "压栈"
-				},
-				{
-					"line": 32,
-					"column": 37,
-					"label": "出栈"
-				},
-				{
-					"line": 38,
-					"column": 29,
-					"label": "访问栈顶元素"
-				},
-				{
-					"line": 44,
-					"column": 7,
-					"label": "销毁栈"
-				},
-				{
-					"line": 49,
-					"column": 5,
-					"label": "main"
-				}
-			]
-		},
-		{
-			"path": "LinearList/Stack/02_LinkedList_Stack.c",
-			"bookmarks": [
-				{
-					"line": 13,
+					"line": 28,
 					"column": 0,
-					"label": "声明栈类型"
+					"label": "析构函数"
 				},
 				{
-					"line": 26,
+					"line": 45,
 					"column": 0,
-					"label": "判断栈空"
-				},
-				{
-					"line": 29,
-					"column": 7,
-					"label": "压栈"
-				},
-				{
-					"line": 39,
-					"column": 17,
-					"label": "出栈"
+					"label": "获取队列长度"
 				},
 				{
 					"line": 50,
 					"column": 0,
-					"label": "访问栈顶元素"
+					"label": "判空"
 				},
 				{
 					"line": 56,
+					"column": 8,
+					"label": "获取队首元素"
+				},
+				{
+					"line": 90,
 					"column": 0,
-					"label": "销毁栈"
-				}
-			]
-		},
-		{
-			"path": "LinearList/Queue/01_queue.c",
-			"bookmarks": [
-				{
-					"line": 12,
-					"column": 16,
-					"label": "初始化"
-				},
-				{
-					"line": 19,
-					"column": 13,
-					"label": "判空"
-				}
-			]
-		},
-		{
-			"path": "LinearList/Queue/02_circular_queue.c",
-			"bookmarks": [
-				{
-					"line": 14,
-					"column": 7,
-					"label": "构造函数"
-				},
-				{
-					"line": 24,
-					"column": 15,
-					"label": "获取队列容量"
-				},
-				{
-					"line": 28,
-					"column": 6,
-					"label": "获取队列长度"
-				},
-				{
-					"line": 33,
-					"column": 5,
-					"label": "判空"
-				},
-				{
-					"line": 38,
-					"column": 4,
-					"label": "判满"
-				},
-				{
-					"line": 43,
-					"column": 5,
-					"label": "访问首元素"
-				},
-				{
-					"line": 49,
-					"column": 4,
-					"label": "入队"
-				},
-				{
-					"line": 58,
-					"column": 4,
 					"label": "出队"
 				},
 				{
-					"line": 67,
-					"column": 5,
-					"label": "销毁队列(析构函数)"
+					"line": 109,
+					"column": 0,
+					"label": "从队首入队"
 				},
 				{
-					"line": 73,
-					"column": 5,
+					"line": 131,
+					"column": 0,
+					"label": "队尾出队"
+				},
+				{
+					"line": 174,
+					"column": 0,
 					"label": "打印队列"
+				},
+				{
+					"line": 178,
+					"column": 0,
+					"label": "测试"
 				}
 			]
 		},
 		{
-			"path": "LinearList/Queue/03_circular_queue.c",
-			"bookmarks": [
-				{
-					"line": 13,
-					"column": 5,
-					"label": "构造函数"
-				},
-				{
-					"line": 22,
-					"column": 8,
-					"label": "获取队列长度"
-				},
-				{
-					"line": 26,
-					"column": 11,
-					"label": "获取队列容量"
-				},
-				{
-					"line": 30,
-					"column": 0,
-					"label": "判空"
-				},
-				{
-					"line": 34,
-					"column": 0,
-					"label": "判满"
-				},
-				{
-					"line": 38,
-					"column": 0,
-					"label": "访问首元素"
-				},
-				{
-					"line": 44,
-					"column": 0,
-					"label": "入队"
-				},
-				{
-					"line": 52,
-					"column": 0,
-					"label": "出队操作"
-				},
-				{
-					"line": 61,
-					"column": 0,
-					"label": "销毁队列"
-				},
-				{
-					"line": 68,
-					"column": 0,
-					"label": "打印队列"
-				}
-			]
-		},
-		{
-			"path": "LinearList/Queue/04_circular_queue.c",
+			"path": "LinearList/NodeList/03_circular_singly_linked_list.c",
 			"bookmarks": [
 				{
 					"line": 16,
-					"column": 9,
-					"label": "初始化队列"
+					"column": 0,
+					"label": "初始化"
 				},
 				{
-					"line": 24,
-					"column": 14,
+					"line": 23,
+					"column": 8,
 					"label": "析构函数"
 				},
 				{
-					"line": 36,
-					"column": 0,
-					"label": "获取队列长度"
-				},
-				{
-					"line": 40,
-					"column": 0,
+					"line": 45,
+					"column": 1,
 					"label": "判空"
-				},
-				{
-					"line": 44,
-					"column": 0,
-					"label": "入队"
-				},
-				{
-					"line": 64,
-					"column": 0,
-					"label": "出队"
 				}
 			]
 		},
@@ -244,54 +79,64 @@
 			"path": "Queue/05_double_ended_queue.c",
 			"bookmarks": [
 				{
+					"line": 7,
+					"column": 3,
+					"label": "定义"
+				},
+				{
 					"line": 14,
-					"column": 8,
+					"column": 1,
 					"label": "初始化"
 				},
 				{
 					"line": 25,
-					"column": 0,
+					"column": 12,
 					"label": "析构函数"
 				},
 				{
+					"line": 30,
+					"column": 5,
+					"label": "获取队列长度"
+				},
+				{
 					"line": 37,
-					"column": 0,
+					"column": 5,
 					"label": "判空"
 				},
 				{
 					"line": 43,
-					"column": 0,
+					"column": 5,
 					"label": "判满"
 				},
 				{
-					"line": 92,
-					"column": 0,
+					"line": 49,
+					"column": 7,
 					"label": "获取队首元素"
 				},
 				{
-					"line": 99,
-					"column": 0,
+					"line": 56,
+					"column": 9,
 					"label": "获取队尾元素"
 				},
 				{
-					"line": 106,
-					"column": 5,
+					"line": 63,
+					"column": 45,
 					"label": "入队"
 				},
 				{
-					"line": 114,
-					"column": 5,
+					"line": 71,
+					"column": 45,
 					"label": "出队"
 				},
 				{
-					"line": 123,
-					"column": 0,
-					"label": "从队首入队"
+					"line": 80,
+					"column": 50,
+					"label": "队首入队"
 				},
 				{
-					"line": 132,
-					"column": 9,
-					"label": "从队尾出队"
+					"line": 89,
+					"column": 8,
+					"label": "队尾出队"
 				}
 			]
 		}

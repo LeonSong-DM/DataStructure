@@ -9,10 +9,10 @@
     "editor.autoClosingOvertype": "never",
     "files.autoSave": "onFocusChange",
     "security.workspace.trust.untrustedFiles": "open",
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "GitHub Dark",
     "editor.fontFamily": "Google Sans Code",
     "terminal.integrated.fontFamily": "Google Sans Code",
-    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.iconTheme": "material-icon-theme",
     "python.languageServer": "Pylance",
     
 
