@@ -8,3 +8,126 @@
 栈的应用:
     - 括号匹配
     - 中缀表达式, 后缀表达式, 前缀表达式的互相转换
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+#define MAX 100
+
+/* ---------- 数字栈 ---------- */
+typedef struct {
+    int data[MAX];
+    int top;
+} NumStack;
+
+void initNumStack(NumStack *s) { s->top = -1; }
+int  isNumEmpty(NumStack *s)  { return s->top == -1; }
+void pushNum(NumStack *s, int x) { s->data[++(s->top)] = x; }
+int  popNum(NumStack *s) { return s->data[(s->top)--]; }
+
+/* ---------- 运算符栈 ---------- */
+typedef struct {
+    char data[MAX];
+    int top;
+} OpStack;
+
+void initOpStack(OpStack *s) { s->top = -1; }
+int  isOpEmpty(OpStack *s)  { return s->top == -1; }
+void pushOp(OpStack *s, char c) { s->data[++(s->top)] = c; }
+char popOp(OpStack *s) { return s->data[(s->top)--]; }
+char peekOp(OpStack *s) { return s->data[s->top]; }
+
+/* ---------- 工具函数 ---------- */
+int precedence(char op) {
+    if (op == '+' || op == '-') return 1;
+    if (op == '*' || op == '/') return 2;
+    return 0;
+}
+
+int apply(int a, int b, char op) {
+    switch (op) {
+        case '+': return a + b;
+        case '-': return a - b;
+        case '*': return a * b;
+        case '/': return a / b;  // 默认整数除法
+    }
+    return 0;
+}
+
+/* ---------- 中缀表达式计算 ---------- */
+int evaluate(const char *expr) {
+    NumStack nums; initNumStack(&nums);
+    OpStack  ops;  initOpStack(&ops);
+
+    int i = 0;
+    while (expr[i]) {
+        if (isspace(expr[i])) {  // 跳过空格
+            i++;
+            continue;
+        }
+
+        /* 读取多位整数 */
+        if (isdigit(expr[i])) {
+            int val = 0;
+            while (isdigit(expr[i])) {
+                val = val * 10 + (expr[i] - '0');
+                i++;
+            }
+            pushNum(&nums, val);
+            continue;  // 已经移动 i
+        }
+
+        /* 左括号 */
+        if (expr[i] == '(') {
+            pushOp(&ops, expr[i]);
+        }
+
+        /* 右括号 */
+        else if (expr[i] == ')') {
+            while (!isOpEmpty(&ops) && peekOp(&ops) != '(') {
+                int b = popNum(&nums);
+                int a = popNum(&nums);
+                char op = popOp(&ops);
+                pushNum(&nums, apply(a, b, op));
+            }
+            popOp(&ops);  // 弹出 '('
+        }
+
+        /* 运算符 */
+        else {
+            while (!isOpEmpty(&ops) &&
+                   precedence(peekOp(&ops)) >= precedence(expr[i])) {
+                int b = popNum(&nums);
+                int a = popNum(&nums);
+                char op = popOp(&ops);
+                pushNum(&nums, apply(a, b, op));
+            }
+            pushOp(&ops, expr[i]);
+        }
+
+        i++;
+    }
+
+    /* 清算剩余运算符 */
+    while (!isOpEmpty(&ops)) {
+        int b = popNum(&nums);
+        int a = popNum(&nums);
+        char op = popOp(&ops);
+        pushNum(&nums, apply(a, b, op));
+    }
+
+    return popNum(&nums);
+}
+
+/* ---------- 测试 ---------- */
+int main() {
+    const char *expr = "3 + 4 * 2 / ( 1 - 5 )";
+    int result = evaluate(expr);
+    printf("Expression: %s\n", expr);
+    printf("Result: %d\n", result);
+    return 0;
+}
