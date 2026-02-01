@@ -4,12 +4,12 @@
 
 
 int main() {
+    int a = 10;
+    printf("%p\n", &a);
+
     int arr[3][4] = {0};
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 4; j++) {
-            printf("%d ", arr[i][j]);
-        }
-        printf("\n");
-    }
+    printf("%p\n", &arr[2][0]);
+    printf("%p\n", &arr[2][1]);
+    printf("%p\n", &arr[2][2]);
     return 0;
 }
