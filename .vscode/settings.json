@@ -2,7 +2,6 @@
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.fontSize": 14,
     "workbench.editor.empty.hint": "hidden",
-    "terminal.integrated.fontSize": 16,
     "editor.overtypeCursorStyle": "underline",
     "editor.cursorBlinking": "smooth",
     "editor.cursorStyle": "underline",
@@ -11,9 +10,6 @@
     "security.workspace.trust.untrustedFiles": "open",
     "workbench.colorTheme": "GitHub Dark",
     "editor.fontFamily": "Google Sans Code",
-    "terminal.integrated.fontFamily": "Google Sans Code",
     "workbench.iconTheme": "material-icon-theme",
     "python.languageServer": "Pylance",
-    
-
 }

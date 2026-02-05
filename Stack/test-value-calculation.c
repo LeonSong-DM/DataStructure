@@ -2,7 +2,7 @@
  * @Author: LeonSong 
  * @Date: 2026-02-01 17:38:47 
  * @Last Modified by: LeonSong
- * @Last Modified time: 2026-02-01 21:31:25
+ * @Last Modified time: 2026-02-03 19:08:33
  */
 
 /**
@@ -115,17 +115,21 @@ int evaluate(const char *expr) {
             pushOp(op_stack, expr[i]);
         } else if(expr[i] == ')') {
             // 右括号 (数字栈不为空)
-            if (isNumEmpty(num_stack) || peekOp(op_stack) != ')') {
+            while (isNumEmpty(num_stack) && peekOp(op_stack) != '(') {
                 int b = popNum(num_stack);
                 int a = popNum(num_stack);
                 char op = popOp(op_stack);
                 pushNum(num_stack, apply(a, b, op));
             }
 
+            if (!isOpEmpty(op_stack) && peekOp(op_stack) == '(') {
+                popOp(op_stack);
+            }
+
         } else {
             // 运算符
             while (!isOpEmpty(op_stack) 
-            && precedence(peekOp(op_stack)) >= expr[i] ) {
+            && precedence(peekOp(op_stack)) >= precedence(expr[i]) ) {
                 int b = popNum(num_stack);
                 int a = popNum(num_stack);
                 char op = popOp(op_stack);

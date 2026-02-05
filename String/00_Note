@@ -1,0 +1,13 @@
+strAssign (&T, chars)
+strCopy(&T,S):         
+strEmpty(S):          
+strCompare(S, T)
+Strlength(S)
+substring(&Sub, S, pos, len)
+Concat(&T,S1,S2)
+Clearstring(&S)
+Destroystring(&S)
+
+
+KMP算法
+    根据模式串T,求出next数组,利用next数组进行匹配,主串指针不回溯
