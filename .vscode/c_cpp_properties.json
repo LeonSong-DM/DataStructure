@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "gcc-15",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
@@ -10,8 +10,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            // "compilerPath": "C:\\Users\\beeplux\\scoop\\apps\\gcc\\current\\bin\\gcc.exe"
-            "compilerPath": "/usr/bin/gcc"
+            "compilerPath": "/opt/homebrew/bin/gcc-15"
         }
     ],
     "version": 4

@@ -2,7 +2,7 @@
  * @Author: LeonSong 
  * @Date: 2026-02-03 17:37:07 
  * @Last Modified by: LeonSong
- * @Last Modified time: 2026-02-03 18:49:04
+ * @Last Modified time: 2026-02-05 21:43:11
  */
 
 # include <stdio.h>
@@ -10,31 +10,39 @@
 # include <string.h>
 
 int match(char *S, char *T) {
-    int i, j = 0;
-    int s_length = strlen(S);
-    int t_length = strlen(T);
-    while (i < s_length && j < t_length) {
+    if (!S || !T) return -1;
+
+    int s_len = strlen(S);
+    int t_len = strlen(T);
+
+    //空匹配
+    if (t_len == 0) return 0;
+
+    int i = 0, j = 0;
+    while (S[i] && T[j]) {
         if (S[i] == T[j]) {
             i++;
             j++;
-        } else {  
+        } else {
+            // 此时,子串中[0, j-1]一定是完全匹配的, 也就是说在主串[x, i-1]是完全匹配的
+            // 已知共j个元素完全匹配, 可以的主串开始的位置x = i - j,后移一位便是i-j+1
             i = i - j + 1;
             j = 0;
         }
     }
-
-    if (j > t_length - 1) {
-        return i - j;
-    }
-    return -1;
+    // 匹配成功标志
+    return j == t_len ? i - j : -1;
 }
 
 int main() {
-    char S[100] = "Hello World.01010101010101010101010101010101010100";
-    char T[4] = "100";
-    int index;
-    index = match(S, T);
-    printf("%d\n", index);
+    char *S = "Hello World";
+    char *T = "llo ";
 
-    
+    int index = match(S, T);
+    if (index == -1) {
+        printf("%s\n", "Match Wrong.");
+    } else {
+        printf("%s%d\n", "The index is: ", index);
+    }
+
 }
