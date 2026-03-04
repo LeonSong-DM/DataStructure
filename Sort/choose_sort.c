@@ -2,8 +2,8 @@
  * @Author: leonsong
  * @Date:   2026-03-03 21:59:33
  * @Last Modified by:   leonsong
- * @Last Modified time: 2026-03-04 00:31:50
- * @Function: 选择排序
+ * @Last Modified time: 2026-03-04 14:44:02
+ * @Function: 选择排序实现
  */
 
 #include <stdio.h>
@@ -66,33 +66,37 @@ int checkASC(int* array, int length) {
  * @brief: 选择排序
  * 
  * @param array: 待排序数组指针
- * @param length: 待排序数组长度
+ * @param size: 待排序数组长度
  */
-void choose_sort(int *array, int length) {
-    if (!array || length <= 0) return;
-    
+void chooseSort(int *arr, int size) {
+    if (!arr || size <= 1) return;
+
+    int i = 0;
+    int j = 1;
     int min = 0;
-    int tmp = 0;
     int k = 0;
-    for (int i = 0; i < length - 1; i++) {
-        min = array[i];
+    int tmp = 0;
+    for (i = 0; i < size - 1; i++) {
+        min = arr[i];
         k = i;
-        for (int j = i + 1; j < length; j++) {
-            if (array[j] < min) {
-                min = array[j];
+
+        for (j = i + 1; j < size; j++) {
+            if (arr[j] < min) {
+                min = arr[j];
                 k = j;
             }
         }
 
-        // 与array[i]交换
-        tmp = array[i];
-        array[i] = min;
-        array[k] = tmp;
-    }        
+        // 替换
+        tmp = arr[i];
+        arr[i] = min;
+        arr[k] = tmp;
+    }
+    
 }
 
 
-// INFO: gcc choose_sort.c utils.c -o app && ./app
+// INFO: gcc chooseSort.c utils.c -o app && ./app
 int main() {
     // 设置随机种子
     srand((unsigned int)time(NULL));
@@ -104,13 +108,13 @@ int main() {
     for (int i = 0; i < 20; i++) {
         arr = getRandomArray(size);
         // 打印原始数组
-        printf("| Round: %-3d | Original: %-4s | ", i + 1, "");
+        printf("| Round: %-3d | Original Array%s | ", i + 1, "");
             for (int v = 0; v < size; v++) {
                 printf("%d ", arr[v]);
             }
             printf("\n");
 
-        choose_sort(arr, size);
+        chooseSort(arr, size);
 
         if (checkASC(arr, size)) {
             printf("| Round: %-3d | Result: %-6s | ", i + 1, "PASS");
