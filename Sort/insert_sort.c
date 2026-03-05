@@ -2,7 +2,7 @@
  * @Author: leonsong
  * @Date:   2026-03-04 16:09:10
  * @Last Modified by:   leonsong
- * @Last Modified time: 2026-03-04 17:01:40
+ * @Last Modified time: 2026-03-05 12:02:39
  * @Function: 插入排序
  */
 #include <stdio.h>
@@ -38,7 +38,7 @@ void insertSortV2(int *arr, int size) {
         
         for (; j >= 0; j--) {
             if (arr[j] > base) {
-                arr[j+1] = arr[j];
+                arr[j+1] = arr[j];  // 右移
             } else {
                 break;
             }

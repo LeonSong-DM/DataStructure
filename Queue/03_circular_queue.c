@@ -1,3 +1,10 @@
+/**
+ * @Author: leonsong
+ * @Date:   2026-01-27 00:21:22
+ * @Last Modified by:   leonsong
+ * @Last Modified time: 2026-03-05 19:12:56
+ * @Function: XXX
+ */
 /* 循环队列实现 - 维护size */
 
 #include<stdio.h>

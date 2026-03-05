@@ -1,3 +1,10 @@
+/**
+ * @Author: leonsong
+ * @Date:   2026-01-27 00:21:23
+ * @Last Modified by:   leonsong
+ * @Last Modified time: 2026-03-05 19:12:49
+ * @Function: XXX
+ */
 /* 队列的顺序实现 */
 
 #include<stdio.h>
