@@ -2,10 +2,11 @@
  * @Author: leonsong
  * @Date:   2026-03-05 16:34:46
  * @Last Modified by:   leonsong
- * @Last Modified time: 2026-03-05 23:27:14
+ * @Last Modified time: 2026-03-05 23:42:55
  * @Function: 二叉树的实现<链式存储>
  */
 
+ 
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,6 +16,8 @@ typedef struct TreeNode {
     struct TreeNode *left;
     struct TreeNode *right;
 } TreeNode;
+
+
 
 
 // TODO 存储二叉树结点的结点
@@ -164,6 +167,21 @@ void levelOrderTraversal(TreeNode *root_node) {
     destroyQueue(queue);
 }
 
+
+/**
+ * @brief: 递归思想实现的二叉树前序遍历
+ * 
+ * @param root_node: 二叉树的根节点
+ */
+void firstOrderTraversal(TreeNode *root_node) {
+    if (!root_node) return;
+
+    printf("%d ", root_node->val);
+    if (root_node->left) firstOrderTraversal(root_node->left);
+    if (root_node->right) firstOrderTraversal(root_node->right);
+}
+
+
 int main(void) {
     TreeNode *n1  = initTreeNode(1);
     TreeNode *n2  = initTreeNode(2);
@@ -218,5 +236,8 @@ int main(void) {
     n10->left = n20;
 
     levelOrderTraversal(n1);
+
+    firstOrderTraversal(n1);
+    printf("\n");
     return 0;
 }
