@@ -2,7 +2,7 @@
  * @Author: leonsong
  * @Date:   2026-03-05 16:34:46
  * @Last Modified by:   leonsong
- * @Last Modified time: 2026-03-05 23:42:55
+ * @Last Modified time: 2026-03-08 16:10:46
  * @Function: 二叉树的实现<链式存储>
  */
 
@@ -182,6 +182,36 @@ void firstOrderTraversal(TreeNode *root_node) {
 }
 
 
+/**
+ * @brief: 递归思想实现的二叉树中序遍历
+ * 
+ * @param root_node: 二叉树的根节点
+ */
+void inOrderTraversal(TreeNode *root_node) {
+    if (!root_node) return;
+    
+    if (root_node->left) inOrderTraversal(root_node->left);
+    printf("%d ", root_node->val);
+    if (root_node->right) inOrderTraversal(root_node->right);
+    
+}
+
+
+/**
+ * @brief: 递归思想实现的二叉树后序遍历
+ * 
+ * @param root_node: 二叉树的根节点
+ */
+void postOrderTraversal(TreeNode *root_node) {
+    if (!root_node) return;
+
+    if (root_node->left) postOrderTraversal(root_node->left);
+    if (root_node->right) postOrderTraversal(root_node->right);
+    printf("%d ", root_node->val);
+    
+}
+
+
 int main(void) {
     TreeNode *n1  = initTreeNode(1);
     TreeNode *n2  = initTreeNode(2);
@@ -235,9 +265,20 @@ int main(void) {
 
     n10->left = n20;
 
+    printf("层次遍历: ");
     levelOrderTraversal(n1);
 
+    printf("前序遍历: ");
     firstOrderTraversal(n1);
     printf("\n");
+
+    printf("中序遍历: ");
+    inOrderTraversal(n1);
+    printf("\n");
+
+    printf("后续遍历: ");
+    postOrderTraversal(n1);
+    printf("\n");
+
     return 0;
 }
